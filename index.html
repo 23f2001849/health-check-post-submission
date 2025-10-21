@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Health Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Health Check</h1>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Danger!</strong> Health issue detected.
+    </div>
+    <div id="healthCheck"></div>
+    <script>
+        // Check system health
+        function checkHealth() {
+            // Simulate health check
+            let health = Math.random() > 0.5;
+
+            // Display message based on health status
+            if (health) {
+                document.getElementById('healthCheck').innerHTML = 'System is healthy.';
+            } else {
+                document.getElementById('healthCheck').innerHTML = 'System is unhealthy.';
+            }
+        }
+
+        // Call health check function
+        checkHealth();
+    </script>
+</body>
+</html>
